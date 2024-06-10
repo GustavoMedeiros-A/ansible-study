@@ -1,0 +1,7 @@
+services:
+  ubuntu_postgres:
+    build: .
+    container_name: ubuntu_postgres
+    ports:
+      - "2222:22"
+    tty: true

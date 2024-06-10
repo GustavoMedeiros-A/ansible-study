@@ -1,0 +1,18 @@
+---
+- name: Configure PostgreSQL on Docker Ubuntu
+  hosts: ubuntu_postgres
+  become: true
+  tasks:
+    - name: Update apt and install PostgreSQL
+      apt:
+        update_cache: yes
+        name: postgresql
+        state: present
+
+    - name: Start PostgreSQL service
+      shell: |
+        service postgresql start
+
+    - name: Enable PostgreSQL service
+      shell: |
+        systemctl enable postgresql
