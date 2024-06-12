@@ -4,7 +4,7 @@
   become: true
   tasks:
     - name: Update apt and install PostgreSQL
-      apt:
+      ansible.builtin.package:
         update_cache: yes
         name: postgresql
         state: present
